@@ -1,7 +1,7 @@
 package com.ruansr.sistemaevento.Entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,8 +24,8 @@ public class Participante {
     @Column(unique = true)
     private String email;
 
-    @ManyToMany
-    private List<Atividade> atividades = new ArrayList<>();
+    @ManyToMany(mappedBy = "participantes")
+    private Set<Atividade> atividades = new HashSet<>();
 
     public Participante() {
     }

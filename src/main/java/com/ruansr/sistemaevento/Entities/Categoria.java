@@ -22,7 +22,7 @@ public class Categoria {
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "categoria")
     private List<Atividade> atividades = new ArrayList<>();
 
     public List<Atividade> getAtividades() {
